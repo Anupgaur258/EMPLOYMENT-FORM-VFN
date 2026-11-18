@@ -1,7 +1,8 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { AlertCircle, Eye, FileText, RefreshCw, Search, Trash2, X } from 'lucide-react';
 
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000/api';
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL?.replace(/\/+$/, '');
+if (!API_BASE_URL) throw new Error('VITE_API_BASE_URL must be set in the admin environment.');
 const STATUS_OPTIONS = ['Pending', 'In Review', 'Contacted', 'Qualified', 'Not Qualified', 'Closed'];
 
 const readApiResponse = async (response) => {
