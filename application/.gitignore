@@ -1,0 +1,11 @@
+# Local credentials and environment files
+**/.env
+!**/.env.example
+
+# Installed dependencies and generated build artifacts
+**/node_modules/
+**/dist/
+
+# Submitted documents and local offline queue data
+backend/uploads/*
+backend/data/
